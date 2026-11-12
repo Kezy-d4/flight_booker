@@ -1,0 +1,31 @@
+passengers
+  name:string [length(2-24), presence]
+  email:string [uniqueness, format(valid email), presence]
+
+airports
+  code:string [uniqueness, length(3-4), presence]
+
+  ------------------------------------------------------------------------------
+
+  has_many departing_flights
+  has_many arriving_flights
+
+flights
+  departure_airport_id:references [presence]
+  arrival_airport_id:references [presence]
+  departure_datetime:datetime [presence]
+  duration_mins:integer [presence]
+
+  ------------------------------------------------------------------------------
+
+  belongs_to departure_airport
+  belongs_to arrival_airport
+
+bookings
+  flight_id:references [presence]
+  passenger_id:references [presence]
+
+  ------------------------------------------------------------------------------
+
+  belongs_to flight
+  belongs_to passenger
