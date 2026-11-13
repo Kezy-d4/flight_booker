@@ -29,6 +29,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_13_180819) do
     t.index ["departure_airport_id"], name: "index_flights_on_departure_airport_id"
   end
 
-  add_foreign_key "flights", "arrival_airports"
-  add_foreign_key "flights", "departure_airports"
+  add_foreign_key "flights", "airports", column: "arrival_airport_id"
+  add_foreign_key "flights", "airports", column: "departure_airport_id"
 end
