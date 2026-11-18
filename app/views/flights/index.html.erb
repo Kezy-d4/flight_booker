@@ -7,7 +7,8 @@
       select_tag(
         :departure_airport_id,
         options_from_collection_for_select(@airports.order(:code), :id, :code),
-        prompt: "Select a departure airport"
+        prompt: "Select a departure airport",
+        required: true
       )
     %>
   </p>
@@ -18,7 +19,8 @@
       select_tag(
         :arrival_airport_id,
         options_from_collection_for_select(@airports.order(:code), :id, :code),
-        prompt: "Select an arrival airport"
+        prompt: "Select an arrival airport",
+        required: true
       )
     %>
   </p>
@@ -28,8 +30,13 @@
     <%=
       select_tag(
         :departure_date,
-        options_from_collection_for_select(Flight.unique_flight_departure_dates, :itself, :itself),
-        prompt: "Select a departure date"
+        options_from_collection_for_select(
+          @flights.order(:departure_date).pluck(:departure_date).uniq,
+          :itself,
+          :itself
+        ),
+        prompt: "Select a departure date",
+        required: true
       )
     %>
   </p>
@@ -41,10 +48,12 @@
         "Number of passengers (between 1 and 4 inclusive)" 
       )
     %>
-    <%= number_field_tag :number_of_passengers, 1, in: 1..4, step: 1 %>
+    <%= number_field_tag :number_of_passengers, 1, in: 1..4, step: 1, required: true %>
   </p>
   
   <p>
     <%= submit_tag "Search" %>
   </p>
 <% end %>
+
+<%= params %>
