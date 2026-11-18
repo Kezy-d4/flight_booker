@@ -2,6 +2,8 @@ class Flight < ApplicationRecord
   validates(
     :departure_airport_id,
     :arrival_airport_id,
+    :departure_date,
+    :departure_time,
     :duration_mins,
     presence: true
   )
