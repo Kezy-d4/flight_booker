@@ -56,4 +56,17 @@
   </p>
 <% end %>
 
-<%= params %>
+<h2>Search results</h2>
+
+<p>
+  <%= params %>
+</p>
+
+<% if @searched_flights.none? %>
+  <p>No flights match the search criteria.</p>
+<% elsif @searched_flights.any? %>
+  <p>The following flight(s) match your search criteria.</p>
+  <p>
+    <%= debug @searched_flights %>
+  </p>
+<% end %>
