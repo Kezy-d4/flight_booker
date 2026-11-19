@@ -1,0 +1,18 @@
+<%= form_with url: new_booking_path, method: :get do |_form| %>
+  <fieldset>
+    <legend>Select a flight to proceed to booking</legend>
+
+    <% @searched_flights.order(:departure_time).each do |searched_flight| %>
+      <p>
+        <%= hidden_field_tag "number_of_passengers", params[:number_of_passengers] %>
+        <%= radio_button_tag :searched_flight, searched_flight.id, required: true %>
+        <%= label_tag "searched_flight_#{searched_flight.id}", "Flight ##{searched_flight.id}" %>
+      </p>
+      <%= render partial: "partials/flight_card", locals: { flight: searched_flight } %>
+    <% end %>
+  </fieldset>
+
+  <p>
+    <%= submit_tag "Proceed to book flight" %>
+  </p>
+<% end %>

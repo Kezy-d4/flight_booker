@@ -1,0 +1,6 @@
+<ul>
+  <li><%= "From #{flight.departure_airport.code} to #{flight.arrival_airport.code}" %></li>
+  <li><%= "Departing on #{flight.departure_date.to_fs(:long)}" %></li>
+  <li><%= "Departing at #{flight.departure_time.strftime("%H:%M %Z")}" %></li>
+  <li><%= "Taking approximately #{flight.duration_mins.minutes.in_hours.round(1)} hours" %></li>
+</ul>

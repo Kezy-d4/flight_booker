@@ -34,6 +34,13 @@ end
     duration_mins: 307
   },
   {
+    departure_airport_id: Airport.find_by_code!("NYC").id,
+    arrival_airport_id: Airport.find_by_code!("SFO").id,
+    departure_date: "2026-11-15",
+    departure_time: "T14:30",
+    duration_mins: 307
+  },
+  {
     departure_airport_id: Airport.find_by_code!("AUS").id,
     arrival_airport_id: Airport.find_by_code!("LAX").id,
     departure_date: "2026-12-01",
