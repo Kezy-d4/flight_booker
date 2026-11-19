@@ -3,9 +3,9 @@ class CreatePassengers < ActiveRecord::Migration[8.1]
     create_table :passengers do |t|
       t.string :name, null: false
       t.string :email, null: false
+      t.references :booking, null: false, foreign_key: true
 
       t.timestamps
     end
-    add_index :passengers, :email, unique: true
   end
 end
