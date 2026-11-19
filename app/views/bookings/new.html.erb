@@ -1,0 +1,13 @@
+<h1>New booking</h1>
+
+<h2><%= "Flight ##{@flight.id}" %></h2>
+<%= render partial: "partials/flight_card", locals: { flight: @flight } %>
+
+<h2>Passenger information</h2>
+
+<%= simple_form_for @booking do |form| %>
+<% end %>
+
+<p>
+  <%= link_to "Cancel", :back %>
+</p>
