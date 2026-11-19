@@ -1,18 +1,19 @@
 passengers
   name:string [length(2-24), presence]
-  email:string [uniqueness, format(valid email), presence]
+  email:string [format(valid email), presence]
+  booking_id:references [presence]
 
   ------------------------------------------------------------------------------
 
-  has_many bookings
+  belongs_to booking
 
-airports
-  code:string [uniqueness, length(3-4), presence]
+bookings
+  flight_id:references [presence]
 
   ------------------------------------------------------------------------------
 
-  has_many departing_flights
-  has_many arriving_flights
+  belongs_to flight
+  has_many passengers
 
 flights
   departure_airport_id:references [presence]
@@ -27,11 +28,10 @@ flights
   belongs_to departure_airport
   belongs_to arrival_airport
 
-bookings
-  flight_id:references [presence]
-  passenger_id:references [presence]
+airports
+  code:string [uniqueness, length(3-4), presence]
 
   ------------------------------------------------------------------------------
 
-  belongs_to flight
-  belongs_to passenger
+  has_many departing_flights
+  has_many arriving_flights  
