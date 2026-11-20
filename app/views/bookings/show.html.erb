@@ -1,0 +1,10 @@
+<h1><%= "Booking ##{@booking.id}" %></h1>
+
+<h2><%= "Flight ##{@booking.flight.id}" %></h2>
+<%= render partial: "partials/flight_card", locals: { flight: @booking.flight } %>
+
+<h2>Passenger information</h2>
+<%= render partial: "partials/passenger_card", collection: @booking.passengers %>
+
+<p>Hint: note down your booking id and navigate to /bookings/id to view your booking at any time.</p>
+<%= link_to "Home", root_path %>
