@@ -4,10 +4,23 @@
 <%= render partial: "partials/flight_card", locals: { flight: @flight } %>
 
 <h2>Passenger information</h2>
-
-<%= simple_form_for @booking do |form| %>
+<%= form_with model: @booking do |booking_form| %>
+  <%= booking_form.hidden_field :flight_id, value: @flight.id %>
+  <ul>
+    <%= booking_form.fields_for :passengers do |passengers_form| %>
+      <li>
+        <p>
+          <%= passengers_form.label :name %>
+          <%= passengers_form.text_field :name, required: true, autofocus: true %>
+        </p>
+        <p>
+          <%= passengers_form.label :email %>
+          <%= passengers_form.email_field :email, required: true %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+  <%= booking_form.submit "Book flight" %>
 <% end %>
 
-<p>
-  <%= link_to "Cancel", :back %>
-</p>
+<p><%= link_to "Cancel", :back %></p>
