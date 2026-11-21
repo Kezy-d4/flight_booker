@@ -30,30 +30,30 @@ system, then follow these steps:
 git clone git@github.com:Kezy-d4/flight_booker.git
 ```
 
-1. `cd` into your cloned repo:
+2. `cd` into your cloned repo:
 
 ```bash
 cd flight_booker
 ```
 
-1. Install gem dependencies and Ruby version:
+3. Install gem dependencies and Ruby version:
 
 ```bash
 bundle install
 rbenv install
 ```
 
-1. Create, seed, and migrate the database:
+4. Create, seed, and migrate the database:
 
 ```bash
 bin/rails db:setup
 bin/rails db:migrate
 ```
 
-1. Start the server
+5. Start the server
 
 ```bash
 bin/rails s
 ```
 
-1. Navigate to localhost:3000 in your browser.
+6. Navigate to localhost:3000 in your browser.
