@@ -50,10 +50,10 @@ bin/rails db:setup
 bin/rails db:migrate
 ```
 
-5. Start the server
+5. Start the server:
 
 ```bash
 bin/rails s
 ```
 
-6. Navigate to localhost:3000 in your browser.
+6. Navigate to localhost:3000 in your browser
