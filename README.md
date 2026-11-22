@@ -5,9 +5,11 @@ before choosing a flight to book for an arbitrary number of passengers. The app
 was developed for the The Odin Project curriculum's Ruby on Rails course.
 see the [project assignment](https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker)
 at The Odin Project. Additionally, see my [data model plan](data-model-plan.txt)
-which provides a high-level overview of the app's data architecture. Finally, you
-may find it helpful to browse the [flights and airports seeded in the database](db/seeds.rb)
-to guide your search criteria.
+which provides a high-level overview of the app's data architecture. Furthermore,
+you may find it helpful to browse the
+[flights and airports seeded in the database](db/seeds.rb) to guide your search
+criteria. Finally, the app is [deployed live](https://flight-booker-web-service.onrender.com/)
+for you to interact with.
 
 The primary purpose of this project was to practice with advanced forms features
 of Ruby on Rails, including nested data and prepopulated input fields. UI, UX,
