@@ -58,4 +58,4 @@ bin/rails db:migrate
 bin/rails s
 ```
 
-6. Navigate to localhost:3000 in your browser
+6. Navigate to `localhost:3000` in your browser
